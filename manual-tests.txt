@@ -61,4 +61,14 @@ Use `./build.sh` to build CiCo and `./run.sh` to run it if using the command lin
 ## Expected results
 * Should display "Developer" for the user name.
 
+# Module 4: Accepting only numerical card numbers
+
+## TEST STEPS:
+1. Build and Run CiCo
+2. Enter asd
+
+## EXPECTED RESULTS
+Program will ignore all input that is not numerical
+
+
 
