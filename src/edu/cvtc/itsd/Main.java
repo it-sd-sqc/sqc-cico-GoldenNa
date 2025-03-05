@@ -243,6 +243,9 @@ public class Main {
     frame.setPreferredSize(new Dimension(640, 480));
     frame.setMaximumSize(new Dimension(640, 480));
 
+    // TICKET 502
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     // Collect each "card" panel in a deck.
     deck = new JPanel(new CardLayout());
     Font fontMain = new Font(Font.SANS_SERIF, Font.PLAIN, 24);
