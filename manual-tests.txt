@@ -70,5 +70,13 @@ Use `./build.sh` to build CiCo and `./run.sh` to run it if using the command lin
 ## EXPECTED RESULTS
 Program will ignore all input that is not numerical
 
+# Module 5: Quiting application when JFrame is closed
 
+## TEST STEPS:
+1. Build and Run CiCo
+2. Enter card id
+3. close CiCo
+
+## EXPECTED RESULTS
+Program will close out application after closing window.
 
