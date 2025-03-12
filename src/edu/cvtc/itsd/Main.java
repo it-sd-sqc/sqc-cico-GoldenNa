@@ -187,11 +187,11 @@ public class Main {
   private static void showError(int code) {
     // Module 2 ticket: Show human-readable error messages.
     String[] explanations = {
-        "Please inform staff an unknown error occurred.",
-        "Please inform staff that database wasn't found.",
-        "Please show your card to staff to validate.",
-        "Please inform staff that status updates failed.",
-        "Please inform staff that log updates failed."
+            "Please inform staff an unknown error occurred.",
+            "Please inform staff that database wasn't found.",
+            "Please show your card to staff to validate.",
+            "Please inform staff that status updates failed.",
+            "Please inform staff that log updates failed."
     };
 
     labelReason.setText(explanations[code]);
@@ -253,13 +253,13 @@ public class Main {
     panelMain.setMinimumSize(new Dimension(320, 240));
     panelMain.setPreferredSize(new Dimension(640, 480));
     panelMain.setMaximumSize(new Dimension(640, 480));
-    panelMain.setBackground(Color.black);
+    panelMain.setBackground(Color.decode("#D8D5D0"));
 
     panelMain.add(Box.createVerticalGlue());
     JLabel labelDirective = new JLabel("Scan card", JLabel.LEADING);
     labelDirective.setFont(fontMain);
     labelDirective.setAlignmentX(JComponent.CENTER_ALIGNMENT);
-    labelDirective.setForeground(Color.cyan);
+    labelDirective.setForeground(Color.decode("#5F758E"));
     panelMain.add(labelDirective);
 
     fieldNumber = new JTextField();
@@ -268,14 +268,14 @@ public class Main {
     fieldNumber.setPreferredSize(new Dimension(200, 32));
     fieldNumber.setMaximumSize(new Dimension(200, 32));
     fieldNumber.setAlignmentX(JComponent.CENTER_ALIGNMENT);
-    fieldNumber.setBackground(Color.green);
-    fieldNumber.setForeground(Color.magenta);
+    fieldNumber.setBackground(Color.white);
+    fieldNumber.setForeground(Color.decode("#49888A"));
     panelMain.add(fieldNumber);
 
     JButton updateButton = new JButton("Update");
     updateButton.setAlignmentX(JComponent.CENTER_ALIGNMENT);
     updateButton.addActionListener(new Update());
-    updateButton.setForeground(Color.green);
+    updateButton.setForeground(Color.decode("#758793"));
     panelMain.add(updateButton);
 
     panelMain.add(Box.createVerticalGlue());
@@ -286,19 +286,19 @@ public class Main {
     panelStatus.setMinimumSize(new Dimension(320, 240));
     panelStatus.setPreferredSize(new Dimension(640, 480));
     panelStatus.setMaximumSize(new Dimension(640, 480));
-    panelStatus.setBackground(Color.blue);
+    panelStatus.setBackground(Color.decode("#C2C9CD"));
 
     panelStatus.add(Box.createVerticalGlue());
     labelUser = new JLabel("Registrant", JLabel.LEADING);
     labelUser.setFont(fontMain);
     labelUser.setAlignmentX(JComponent.CENTER_ALIGNMENT);
-    labelUser.setForeground(Color.yellow);
+    labelUser.setForeground(Color.decode("#D6A732"));
     panelStatus.add(labelUser);
 
     labelState = new JLabel("updated", JLabel.LEADING);
     labelState.setFont(fontMain);
     labelState.setAlignmentX(JComponent.CENTER_ALIGNMENT);
-    labelState.setForeground(Color.magenta);
+    labelState.setForeground(Color.decode("#5E6D74"));
     panelStatus.add(labelState);
 
     panelStatus.add(Box.createVerticalGlue());
@@ -309,7 +309,7 @@ public class Main {
     panelError.setMinimumSize(new Dimension(320, 240));
     panelError.setPreferredSize(new Dimension(640, 480));
     panelError.setMaximumSize(new Dimension(640, 480));
-    panelError.setBackground(Color.red);
+    panelError.setBackground(Color.decode("#9a2b1b"));
 
     panelError.add(Box.createVerticalGlue());
     labelReason = new JLabel("", JLabel.LEADING);
@@ -321,7 +321,7 @@ public class Main {
     buttonAcknowledge = new JButton("OK");
     buttonAcknowledge.addActionListener(handler);
     buttonAcknowledge.setAlignmentX(JComponent.CENTER_ALIGNMENT);
-    buttonAcknowledge.setForeground(Color.red);
+    buttonAcknowledge.setForeground(Color.decode("#E09670"));
     panelError.add(buttonAcknowledge);
     panelError.add(Box.createVerticalGlue());
 
@@ -334,7 +334,7 @@ public class Main {
     // Module 2 ticket: Add version number.
     JLabel labelMeta = new JLabel("CiCo v" + VERSION);
     labelMeta.setOpaque(true);
-    labelMeta.setBackground(Color.darkGray);
+    labelMeta.setBackground(Color.decode("#CAB1A2"));
     labelMeta.setForeground(Color.white);
     labelMeta.setBorder(new EmptyBorder(10, 10, 10, 10));
     labelMeta.setMinimumSize(new Dimension(320, 32));
