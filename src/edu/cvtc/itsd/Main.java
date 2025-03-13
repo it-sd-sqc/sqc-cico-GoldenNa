@@ -4,6 +4,8 @@ package edu.cvtc.itsd;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.sql.*;
 import java.util.TimerTask;
 import javax.swing.*;
@@ -45,7 +47,12 @@ public class Main {
         Toolkit.getDefaultToolkit().beep();
         return;
       }
-      super.insertString(fb, offset, stringToAdd, attr);
+      if (fb.getDocument().getLength() + stringToAdd.length() <= MAX_LENGTH) {
+        super.insertString(fb, offset, stringToAdd, attr);
+        if (fb.getDocument().getLength() == MAX_LENGTH) {
+          Main.processCard();
+        }
+      }
     }
 
     @Override
@@ -56,7 +63,12 @@ public class Main {
         Toolkit.getDefaultToolkit().beep();
         return;
       }
-      super.insertString(fb, offset, stringToAdd, attr);
+      if (fb.getDocument().getLength() + stringToAdd.length() <= MAX_LENGTH) {
+        super.replace(fb, offset, lengthToDelete, stringToAdd, attr);
+        if (fb.getDocument().getLength() == MAX_LENGTH) {
+          Main.processCard();
+        }
+      }
     }
 
     private boolean isNumeric(String str) {
@@ -68,11 +80,6 @@ public class Main {
       return true;
     }
   }
-
-
-
-
-
 
   // Lookup the card information after button press ///////////////////////////
   public static class Update implements ActionListener {
@@ -272,11 +279,11 @@ public class Main {
     fieldNumber.setForeground(Color.magenta);
     panelMain.add(fieldNumber);
 
-    JButton updateButton = new JButton("Update");
-    updateButton.setAlignmentX(JComponent.CENTER_ALIGNMENT);
-    updateButton.addActionListener(new Update());
-    updateButton.setForeground(Color.green);
-    panelMain.add(updateButton);
+//    JButton updateButton = new JButton("Update");
+//    updateButton.setAlignmentX(JComponent.CENTER_ALIGNMENT);
+//    updateButton.addActionListener(new Update());
+//    updateButton.setForeground(Color.green);
+//    panelMain.add(updateButton);
 
     panelMain.add(Box.createVerticalGlue());
 
